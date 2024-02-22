@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="nPcmwDTaiqHeVT4_ZkLpEtJvECSvHtingf8IO-r5iQw" />
+    <meta name="keywords" content="kenkō food bar, poke bar, bœuf, riz japonais, asiatique, vegan, food, bar, food bar, kenko, kenko food, salade, poke, services, bibimbap, yakisoba, kenkō, quinoa, delivery, riz, saumon, bowl, fast food, street food, healthy, cook, signature, légumes, fast, bar à salade, sushi, maki, ramen, teriyaki, tempura, gyoza, soupe miso, udon, soba, yakitori, donburi, tofu, edamame, wasabi, sashimi, nori, sésame, matcha, thé vert, sésame noir, avocat, thon, saumon, crevettes, poulpe, anguille, crabe, sauce soja, sauce ponzu, gingembre, ail, oignon vert, huile de chili, vinaigre de riz, mirin, sake, vin de prune, yuzu, katsu, okonomiyaki, takoyaki, mochi, latte matcha, bubble tea, smoothies, jus, eau de coco, bols açai, bols de quinoa, bols de protéines">
+  o
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://scontent.fnbe1-2.fna.fbcdn.net/v/t1.6435-9/82295364_107637397446969_6042127337376448512_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eEnimU4CfrwAX_NTaYJ&_nc_ht=scontent.fnbe1-2.fna&oh=00_AfAxw2FXxjp8gWEU5CuOraeFSJIvSiSPkYx9eEV5xU4O2g&oe=64511AF6" rel="icon" type="image/png" >
+    <link href="./assets/img/logo.jpg" rel="icon" type="image/jpg" >
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="assets/css/booking.css">
+
+    <title>Kenko Food Bar | Booking</title>
+</head>
+<body>
+            <style>
+           .language-option {
+              color: white;
+              font-size: 24px;
+              margin-bottom: 10px;
+              cursor: pointer;
+            }
+
+            .language-option:hover {
+              text-decoration: underline;
+            }
+        </style>
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(e) {
+              if (!e.target.matches('.dropbtn')) {
+              var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                  myDropdown.classList.remove('show');
+                }
+              }
+            }
+            
+            const francais = document.getElementById('fr-chat');
+            const anglais = document.getElementById('en-chat');
+            const arabe = document.getElementById('ar-chat');
+            
+            
+            function switchToFrench() {
+              fetch('langue-booking.json')
+                .then(response => response.json())
+                .then(data => {
+                  const fr = data.fr;
+                  for (const key in fr) {
+                    const id = key;
+                    const value = fr[key];
+                    document.getElementById(id).textContent = value;
+                  }
+                  francais.style.visibilty = 'visible';
+                  francais.style.position = 'relative';
+                  anglais.style.position = 'absolute';
+                  anglais.style.visibilty = 'hidden';
+                  arabe.style.position = 'absolute';
+                  arabe.style.visibilty = 'hidden';
+                  myDropdown.classList.remove('show');
+                });
+            }
+            
+            function switchToArabic(){
+                fetch('langue-booking.json')
+                .then(response => response.json())
+                .then(data => {
+                  const ar = data.ar;
+                  for (const key in ar) {
+                    const id = key;
+                    const value = ar[key];
+                    document.getElementById(id).textContent = value;
+                  }
+                  document.getElementById("ar-chat").style.visibilty = 'visible';
+                  document.getElementById("ar-chat").style.position = 'relative';
+                  document.getElementById("fr-chat").style.visibilty = 'hidden';
+                  document.getElementById("en-chat").style.visibilty = 'hidden';
+                  document.getElementById("en-chat").style.position = 'absolute';
+                  document.getElementById("fr-chat").style.position = 'absolute';
+                  myDropdown.classList.remove('show');
+                });
+            }
+
+            function switchToEnglish() {
+              fetch('langue-booking.json')
+                .then(response => response.json())
+                .then(data => {
+                  const en = data.en;
+                  for (const key in en) {
+                    const id = key;
+                    const value = en[key];
+                    document.getElementById(id).textContent = value;
+                  }
+                  document.getElementById("en-chat").style.visibilty = 'visible';
+                  document.getElementById("en-chat").style.position = 'relative';
+                  document.getElementById("fr-chat").style.visibilty = 'hidden';
+                  document.getElementById("ar-chat").style.visibilty = 'hidden';
+                  document.getElementById("ar-chat").style.position = 'absolute';
+                  document.gwtElementById("fr-chat").style.position = 'absolute';
+                  myDropdown.classList.remove('show');
+                });
+            }
+            
+        </script>
+            
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="./index.html" class="nav__logo">Kenkō</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./index.html" class="nav__link active-link" id="1">Home</a></li>
+                    <li class="nav__item"><a href="./index.html" class="nav__link" id="2">A propos</a></li>
+                    <li class="nav__item"><a href="./index.html" class="nav__link" id="3">Services</a></li>
+                    <li class="nav__item"><a href="./index.html" class="nav__link" id="4">Menu</a></li>
+                    <li class="nav__item"><a href="./index.html" class="nav__link" id="5">Nous contacter</a></li>
+
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    <li class="dropdown">
+                          <button class="dropbtn" onclick="myFunction()" id="lgd">FR</button>
+                          <div class="dropdown-content" id="myDropdown">
+                            <a class="language-option" id="fr-option" onclick="switchToFrench()">Français</a>
+                            <a class="language-option" id="en-option" onclick="switchToEnglish()">English</a>
+                            <a class="language-option" id="ar-option" onclick="switchToArabic()">عربي</a>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <main class="l-main">
+        <br><br><br>
+        <section>
+        <center>
+            <div class="language-bot">
+                <div id="fr-chat" class="fr-chat">
+                  <br><br>
+                  <script src="https://app.wotnot.io/chat-widget/6QDfMgxJVPaU210148584406S3fUTrVD.js" defer></script>
+                  <iframe width="50%" height="680" src="https://embed.wotnot.io/6QDfMgxJVPaU210148584406S3fUTrVD/bot/5ucPRt7rcKtV2102252724969ZwM7DRD?display_header=false&history_retention=false" frameborder="0"></iframe>
+                </div>
+                <div id="en-chat" class="en-chat">
+                    <br><br>
+                    <script src='https://app.wotnot.io/chat-widget/6QDfMgxJVPaU210148584406S3fUTrVD.js' defer></script>
+                    <iframe width="50%" height="680" src="https://embed.wotnot.io/6QDfMgxJVPaU210148584406S3fUTrVD/bot/6easxHSHfERV185639050422lreuKKt4?display_header=false&history_retention=false" frameborder="0"></iframe>
+                </div>
+                <div id="ar-chat" class="ar-chat">
+                    <br><br>
+                    <script src='https://app.wotnot.io/chat-widget/6QDfMgxJVPaU210148584406S3fUTrVD.js' defer></script>
+                    <iframe width="50%" height="680" src="https://embed.wotnot.io/6QDfMgxJVPaU210148584406S3fUTrVD/bot/7vJVLEnRw4Kt192456546610WoAetSSB?display_header=false&history_retention=false" frameborder="0"></iframe>
+                </div>
+          `</div>`
+            <br><br>
+            <div class="contact__button">
+                <a href="tel:+21624637637" class="button" id="95">Telephone</a>
+            </div>
+            <br><br>
+            <div class="contact__button">
+                <a href="mailto:kenko.foodbar@gmail.com" class="button" id="96">Mail</a>
+            </div>
+        </center>
+        </section>
+    </main>
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid_2">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Kenko Food</a>
+                <span class="footer__description" id="78">Horaires</span>
+                <span class="footer__description" id="79">dimanche Fermé</span>
+                <span class="footer__description" id="80">lundi 11:30–22:00</span>
+                <span class="footer__description" id="81">mardi 11:30–22:00</span>
+                <span class="footer__description" id="82">mercredi 11:30–22:00</span>
+                <span class="footer__description" id="83">jeudi 11:30–22:00</span>
+                <span class="footer__description" id="84">vendredi 11:30–22:00</span>
+                <span class="footer__description" id="85">samedi 11:30–22:00</span>
+
+
+                <div>
+                    <a href="https://www.facebook.com/kenko.foodbar/" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/kenko_foodbar/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title" id="95">Services</h3>
+                <ul>
+                    <li><a href="#contact" class="footer__link" id="86">Commander</a></li>
+                    <li><a href="#menu" class="footer__link" id="87">Prix</a></li>
+                    <li><a href="#services" class="footer__link" id="88">Nos services</a></li>
+                    <li><a href="#contact" class="footer__link" id="89">Reserver</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title" id="90">Information</h3>
+                <ul>
+                    <li><a href="#contact" class="footer__link" id="91">Nous contacter</a></li>
+                    <li><a href="#" class="footer__link" id="92">Politique de confidentialité</a></li>
+                    <li><a href="#" class="footer__link" id="93">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title" id="94">Adresse</h3>
+                <ul>
+                    <li>La Marsa - Tunisia</li>
+                    <li>Plage Rocheuse de Sidi Bou Said, Rue des Hafsides, Marsa 2070</li>
+                    <li>+216 24637637</li>
+                    <li>kenko.foodbar@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2023 H&H. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
